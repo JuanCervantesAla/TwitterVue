@@ -118,20 +118,8 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
     ssr: {
-      // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
-                                          // will mess up SSR
-
-      // extendSSRWebserverConf (esbuildConf) {},
-      // extendPackageJson (json) {},
-
       pwa: false,
-
-      // manualStoreHydration: true,
-      // manualPostHydrationTrigger: true,
-
-      prodPort: 3000, // The default port that the production server should use
-                      // (gets superseded if process.env.PORT is specified at runtime)
-
+      prodPort: process.env.PORT || 3000, // Use environment PORT or default to 3000
       middlewares: [
         'render' // keep this as last one
       ]
